@@ -1,0 +1,43 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.js"></script>
+</head>
+
+<body>
+    <label for="name">姓名</label>
+    <input type="text" name="" id="myname" placeholder="请输入名字">
+<br>
+    <label for="name">介绍</label>
+    <input type="text" name="" id="myintor" placeholder="请输入介绍">
+<br>
+    <label for="name">扣扣</label>
+    <input type="text" name="" id="myQQ" placeholder="请输入QQ">
+    <input type="button" name="" id="" value="提交" onclick="setinfo()" >
+</body>
+
+<script>
+    let myname = document.getElementById('myname')
+    let myintor = document.getElementById('myintor')
+    let myQQ = document.getElementById('myQQ')
+    function setinfo() {
+        let i;
+        for (i = 0; i >= 0;) {
+            let ifname = localStorage.getItem('name' + i)
+            if (localStorage.getItem('name' + i) != null) {
+                //自定义代码
+                i++
+                console.log('key 存在' + 'key的值为' + ifname)
+                continue;
+            } else {
+                console.log('key 不存在')
+                localStorage.setItem('name' + i, myname.value)
+                localStorage.setItem('intor' + i, myintor.value)
+                localStorage.setItem('QQ' + i, myQQ.value)
+                myname.value = ''
+                myintor.value = ''
+                myQQ.value = ''
+                break;
+            }
+        }
+    }
+</script>

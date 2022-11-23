@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.js"></script>
+</head>
+<body>
+    <h1>大家好</h1>
+    <p>My name is <span id="myname"></span></p>
+    <p id="myintor">
+    </p>
+    <p>我的QQ是<span id="myQQ"></span>
+    </p>
+</body>
+
+<script>
+    let i = 0
+    let url = decodeURI(window.location.href);
+    let argsIndex = url.split("?i=");
+    i = argsIndex[1]
+    //获取名字
+    let myname = document.getElementById('myname');
+    myname.innerText = localStorage.getItem('name' + i);
+    //获取介绍
+    let myintor = document.getElementById('myintor');
+    myintor.innerText = localStorage.getItem('intor' + i);
+    //获取QQ
+    let myQQ = document.getElementById('myQQ');
+    myQQ.innerText = localStorage.getItem('QQ' + i)
+</script>

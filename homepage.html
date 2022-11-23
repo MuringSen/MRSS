@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.js"></script>
+</head>
+
+<body>
+    <h3>欢迎来到我的页面</h3>
+    <h5>下面是我和我的舍友的一些介绍:</h5>
+    <p id="alla">
+    </p>
+</body>
+<script>
+    function setinfo() {
+        let html
+        let i;
+        for (i = 0; i >= 0;) {
+            let ifname = localStorage.getItem('name' + i)
+            let alla = document.getElementById('alla')
+            if (localStorage.getItem('name' + i) != null) {
+                //自定义代码
+                console.log('key 存在' + 'key的值为' + ifname)
+                console.log('这是第' + i + '个用户')
+                html = document.createElement('a');
+                html.setAttribute('href', './myinfo.html?i=' + i);
+                html.innerText = ifname
+                alla.appendChild(html)
+                i++
+                continue;
+            } else {
+                console.log('key 不存在')
+                break;
+            }
+        }
+    }
+    setinfo()
+</script>
