@@ -1,3 +1,3 @@
 # MRSS
 用于测试
-新增了返回按钮，可跳转至setinfo.html
+新增了两个按钮，可在homepage和setinfo之间跳转
